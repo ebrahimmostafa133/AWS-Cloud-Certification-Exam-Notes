@@ -866,7 +866,6 @@ function renderNotes() {
         article.innerHTML = `
             <div class="note-header">
                 <span class="tag ${catClass}">${note.category.charAt(0).toUpperCase() + note.category.slice(1)}</span>
-                <span class="date">${note.date}</span>
             </div>
             <h3>${note.title}</h3>
             <div class="note-content">${note.content}</div>
