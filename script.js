@@ -634,7 +634,7 @@ const notesData = [
         title: "Shared Responsibility Model",
         category: "security",
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-        content: "<p>• <strong>AWS</strong> → Security <em>'of'</em> the Cloud (hardware, infra, global network)<br>• <strong>Customer</strong> → Security <em>'in'</em> the Cloud (OS, apps, data, firewall config)<br>• For <strong>S3/DynamoDB</strong> (abstract services), AWS manages the OS &amp; platform too</p>"
+        content: "<p>\u2022 <strong>AWS</strong> \u2192 Security <em>'of'</em> the Cloud (<strong>Physical and Environmental controls</strong>, hardware, infra, global network)<br>\u2022 <strong>Customer</strong> \u2192 Security <em>'in'</em> the Cloud (<strong>Patching Guest OS</strong>, <strong>Configuring Apps</strong>, <strong>Zone Security</strong>, data, firewall)<br>\u2022 For <strong>S3/DynamoDB</strong>, AWS manages the OS &amp; platform too</p>"
     },
     {
         id: 92,
@@ -810,6 +810,97 @@ const notesData = [
         category: "compute",
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         content: "<p>🔑 Exam Thumb Rule:<br>• <strong>Transcribe</strong> → <em>Speech to Text</em> (ASR)<br>• <strong>Polly</strong> → <em>Text to Speech</em> (TTS)<br>• <strong>Translate</strong> → <em>Language translation</em> (text → text)<br>For speech I/O apps: Transcribe (input) + Polly (output)</p>"
+    },
+    {
+        id: 117,
+        title: "Services Supporting Reservations",
+        category: "compute",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p>The following AWS services support <strong>reservations to optimize costs</strong>:<br>• <strong>Amazon EC2</strong> (Reserved Instances)<br>• <strong>Amazon DynamoDB</strong> (Reserved Capacity)<br>• <strong>Amazon RDS</strong> (Reserved Instances)<br>• <strong>Amazon ElastiCache</strong> (Reserved Nodes)<br>• <strong>Amazon Redshift</strong> (Reserved Nodes)</p>"
+    },
+    {
+        id: 118,
+        title: "AWS Direct Connect vs VPN",
+        category: "networking",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p><strong>AWS Direct Connect</strong> connects an on-premises environment directly to a VPC via a dedicated connection that does <em>not</em> use the public internet.<br><br>\ud83d\udd11 Exam Thumb Rule:<br>\u2022 <strong>Direct Connect</strong> \u2192 Private physical connection, avoids public internet.<br>\u2022 <strong>Site-to-Site VPN</strong> \u2192 Secure encrypted connection that uses the <em>public internet</em>.<br>\u2022 <strong>VPC Endpoint</strong> \u2192 Connects VPC privately to <em>AWS services</em>, not on-premises.</p>"
+    },
+    {
+        id: 119,
+        title: "AWS Shield (Standard vs Advanced)",
+        category: "security",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p><strong>AWS Shield Standard</strong> is enabled for all AWS customers automatically at <strong>no additional cost</strong>. It defends against most common network and transport layer DDoS attacks.<br><br>\ud83d\udd11 Exam Thumb Rule:<br>\u2022 <strong>Shield Standard</strong> \u2192 Free, automatic DDoS protection (Layer 3 & 4) for all customers.<br>\u2022 <strong>Shield Advanced</strong> \u2192 Paid service, adds intelligent Layer 7 protection for internet-facing apps.<br>\u2022 <strong>AWS WAF</strong> \u2192 Web Application Firewall (Paid), protects against common web exploits (like SQLi, XSS).</p>"
+    },
+    {
+        id: 120,
+        title: "OS Patching (Amazon Aurora)",
+        category: "database",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p><strong>Amazon Aurora</strong> is a fully managed relational database by Amazon RDS. The <strong>AWS Product Team automatically</strong> applies patches to the underlying OS.<br><br>\ud83d\udd11 Exam Thumb Rule:<br>\u2022 <strong>Aurora OS Patching</strong> \u2192 Handled automatically by AWS.<br>\u2022 <strong>EC2 / On-Prem OS Patching</strong> \u2192 Handled by the <em>Customer</em> (e.g., via AWS Systems Manager or SSH).<br>\u2022 AWS Support handles tickets, <em>not</em> patching requests.</p>"
+    },
+    {
+        id: 121,
+        title: "AWS Cloud Adoption Framework (CAF)",
+        category: "compute",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p>The <strong>AWS CAF</strong> helps organizations digitally transform by organizing teams around <strong>products and value streams</strong> and leveraging <strong>agile methods</strong> to rapidly iterate and become more responsive to customer inquiries.</p>"
+    },
+    {
+        id: 122,
+        title: "AWS Elastic Load Balancing (ELB)",
+        category: "networking",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p><strong>Elastic Load Balancing (ELB)</strong> automatically distributes incoming application traffic across multiple targets (like EC2 instances). It acts as a single point of contact and ensures no single instance is overwhelmed.</p>"
+    },
+    {
+        id: 123,
+        title: "VPC Gateway Endpoints",
+        category: "networking",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p>A VPC endpoint privately connects your VPC to supported AWS services <strong>without</strong> needing an internet gateway. <br><br>\ud83d\udd11 Exam Thumb Rule:<br>\u2022 <strong>Gateway Endpoints</strong> \u2192 ONLY supported by <strong>Amazon S3</strong> and <strong>Amazon DynamoDB</strong>.<br>\u2022 <strong>Interface Endpoints</strong> \u2192 Used by all other supported services (powered by AWS PrivateLink).</p>"
+    },
+    {
+        id: 124,
+        title: "AWS Artifact",
+        category: "security",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p><strong>AWS Artifact</strong> is a free, self-service portal for on-demand access to AWS <strong>compliance reports</strong> (like SOC/PCI) and online agreements (like HIPAA / BAA). It is specifically used to verify governance and compliance guidelines.</p>"
+    },
+    {
+        id: 125,
+        title: "Migration: Replatforming",
+        category: "compute",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p><strong>Replatforming</strong> involves moving an application to the cloud with a few optimizations without fundamentally changing the core architecture. <br>\u2022 Example: Migrating a self-managed MySQL database to <strong>Amazon RDS</strong> to reduce operational overhead.</p>"
+    },
+    {
+        id: 126,
+        title: "AWS Shield Advanced Resources",
+        category: "security",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p><strong>AWS Shield Advanced</strong> extends intelligent DDoS protection (up to layer 7) precisely for web applications running on: <strong>EC2</strong>, <strong>Elastic Load Balancing (ELB)</strong>, <strong>Amazon CloudFront</strong>, <strong>AWS Global Accelerator</strong>, and <strong>Amazon Route 53</strong>.</p>"
+    },
+    {
+        id: 127,
+        title: "Reliability Pillar: Fault Tolerance",
+        category: "compute",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p>In the AWS Well-Architected Framework, Fault Tolerance is explicitly achieved by <strong>scaling out (horizontal scaling)</strong>. Scaling up (vertical scaling) inherently relies on a single computer, which remains a single point of failure.</p>"
+    },
+    {
+        id: 128,
+        title: "AWS Support Plans & Architecture",
+        category: "compute",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p>\ud83d\udd11 Exam Thumb Rule for Architectural Guidance:<br>\u2022 <strong>Developer Support</strong> \u2192 <em>General</em> architectural guidance.<br>\u2022 <strong>Business Support</strong> \u2192 Guidance contextual to your <em>specific use-cases</em>.<br>\u2022 <strong>Enterprise Support</strong> \u2192 Consultative guidance contextual to your <em>application</em>.</p>"
+    },
+    {
+        id: 129,
+        title: "Decoupling Microservices (SQS & SNS)",
+        category: "compute",
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        content: "<p>\ud83d\udd11 Exam Thumb Rule:<br>To <strong>decouple</strong> components of a microservices-based application, you should primarily use messaging services:<br>\u2022 <strong>Amazon SQS</strong> (Simple Queue Service) \u2192 stores queued messages.<br>\u2022 <strong>Amazon SNS</strong> (Simple Notification Service) \u2192 pub/sub messaging to fan out.<br><em>Services like EC2, Lambda, or Step Functions are execution or orchestration engines; they are NOT decoupling messaging buffers themselves.</em></p>"
     }
 ];
 
